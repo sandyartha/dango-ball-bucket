@@ -18,3 +18,15 @@
     </tbody>
   </table>
 </div>
+
+
+<textarea rows="10" cols="100">
+
+{{ range .Page.Resources.ByType "image" }}
+ 
+{{ .Name | replaceRE "_" " " | replaceRE "\\.(jpg|png)$" "" }}
+{{ .RelPermalink | safeHTML | absURL }}
+
+{{ end }}
+
+</textarea>
